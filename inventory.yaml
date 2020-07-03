@@ -1,13 +1,13 @@
 groups:
 - name: containers
   targets:
-    - uri: 127.0.0.1:2000
-      name: target1
-    - uri: 127.0.0.1:2001
-      name: target2
+    - uri: 54.169.88.234:22
+      name: s2
+    - uri: 54.169.223.61:22
+      name: s3
   config:
     transport: ssh
     ssh:
+      private-key: /root/.ssh/id_rsa
       user: root
-      password: root
       host-key-check: false

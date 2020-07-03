@@ -1,0 +1,19 @@
+parameters:
+  targets:
+    type: TargetSpec
+  src:
+    type: String
+
+steps:
+  - name: install_nginx
+    task: package
+    targets: $targets
+    parameters:
+      action: install
+      name: nginx
+    description: "Install Nginx using the packages task"
+  - name: index_homepage
+    source: $src
+    destination: /var/www/html/index.html
+    targets: $targets
+    description: "Upload index.html" 
